@@ -1,0 +1,594 @@
+/* ================================
+   🎨 ENHANCED HUD - PERFORMANCE MODE
+   ================================
+   
+   Performance Optimizations & Reduced Effects
+   Version: 3.1.0
+   
+   Lightweight styles for better FPS
+   on lower-end systems and mobile devices
+   ================================ */
+
+/* ================================
+   ⚡ PERFORMANCE MODE ACTIVATION
+   ================================ */
+
+/* Global Performance Mode Detection */
+.performance-mode,
+.performance-mode *,
+body.performance-mode,
+body.performance-mode * {
+    /* Disable all animations globally */
+    animation: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    
+    /* Disable transitions for instant updates */
+    transition: none !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    
+    /* Remove complex visual effects */
+    backdrop-filter: none !important;
+    filter: none !important;
+    transform: none !important;
+    
+    /* Simplified shadows */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    text-shadow: none !important;
+}
+
+/* ================================
+   🎮 HUD OPTIMIZATIONS
+   ================================ */
+
+/* Simplified HUD Items */
+.performance-mode .hud-item {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .hud-item:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .hud-item.critical {
+    border-color: #ff4444 !important;
+    background: rgba(20, 0, 0, 0.9) !important;
+    animation: none !important;
+}
+
+/* Simplified Progress Bars */
+.performance-mode .stat-progress {
+    box-shadow: none !important;
+    background: var(--color-primary) !important;
+}
+
+.performance-mode .stat-progress::after {
+    display: none !important;
+}
+
+/* Simplified Icons */
+.performance-mode .stat-icon {
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* ================================
+   📱 MENU SYSTEM OPTIMIZATIONS
+   ================================ */
+
+/* Simplified Menu Container */
+.performance-mode #openmenu {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: none !important;
+    border: 2px solid var(--color-primary) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+.performance-mode #openmenu::before {
+    display: none !important;
+}
+
+/* Simplified Quasar Components */
+.performance-mode .q-tab-panels {
+    backdrop-filter: none !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.performance-mode .q-splitter__panel {
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.performance-mode .q-tab:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.performance-mode .q-tab--active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: none !important;
+    border-right: 2px solid var(--color-primary) !important;
+}
+
+/* ================================
+   🔘 FORM ELEMENTS OPTIMIZATIONS
+   ================================ */
+
+/* Simplified Buttons */
+.performance-mode .btn,
+.performance-mode .q-btn {
+    background: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+    box-shadow: none !important;
+}
+
+.performance-mode .btn:hover,
+.performance-mode .q-btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: var(--color-secondary) !important;
+}
+
+/* Simplified Checkboxes & Toggles */
+.performance-mode .q-checkbox:hover .q-checkbox__inner {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.performance-mode .q-checkbox__inner--truthy .q-checkbox__bg {
+    box-shadow: none !important;
+    animation: none !important;
+}
+
+.performance-mode .q-toggle:hover .q-toggle__inner {
+    box-shadow: none !important;
+}
+
+.performance-mode .q-toggle--truthy .q-toggle__inner {
+    box-shadow: none !important;
+}
+
+/* Simplified Sliders */
+.performance-mode .q-slider__thumb {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .q-slider__thumb:hover {
+    transform: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .q-slider__track-container--h .q-slider__track:before {
+    box-shadow: none !important;
+}
+
+/* ================================
+   📋 LIST & CARD OPTIMIZATIONS
+   ================================ */
+
+/* Simplified List Items */
+.performance-mode .q-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.performance-mode .list-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Simplified Cards */
+.performance-mode .q-card {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .q-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .card {
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ================================
+   🎨 THEME SYSTEM OPTIMIZATIONS
+   ================================ */
+
+/* Disable Theme Particle Effects */
+.performance-mode .particle-effect::before,
+.performance-mode .particle-effect::after {
+    display: none !important;
+}
+
+/* Disable Theme Background Effects */
+.performance-mode.theme-cyberpunk::before,
+.performance-mode.theme-synthwave::before,
+.performance-mode.theme-matrix::after {
+    display: none !important;
+}
+
+/* Simplified Theme Text Effects */
+.performance-mode .text-h6 {
+    background: none !important;
+    color: var(--color-primary) !important;
+    -webkit-text-fill-color: initial !important;
+    animation: none !important;
+}
+
+.performance-mode .text-neon {
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Simplified Theme Preview Cards */
+.performance-mode .theme-preview-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ================================
+   🧭 COMPASS OPTIMIZATIONS
+   ================================ */
+
+/* Simplified Compass */
+.performance-mode .baseplate {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    animation: none !important;
+}
+
+.performance-mode .street1,
+.performance-mode .street2,
+.performance-mode .pointer,
+.performance-mode .degrees {
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* ================================
+   🚗 VEHICLE HUD OPTIMIZATIONS
+   ================================ */
+
+/* Simplified Vehicle Elements */
+.performance-mode .square,
+.performance-mode .circle {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    animation: none !important;
+}
+
+.performance-mode speed,
+.performance-mode altitude {
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* ================================
+   📍 GPS HUD OPTIMIZATIONS
+   ================================ */
+
+/* Simplified GPS Container */
+.performance-mode #gps-hud-container {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .gps-panel {
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* ================================
+   🐛 DEBUG PANEL OPTIMIZATIONS
+   ================================ */
+
+/* Simplified Debug Overlay */
+.performance-mode .debug-overlay {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* ================================
+   🎭 MODAL & DIALOG OPTIMIZATIONS
+   ================================ */
+
+/* Simplified Modals */
+.performance-mode .q-dialog__backdrop {
+    backdrop-filter: none !important;
+}
+
+.performance-mode .modal-container {
+    backdrop-filter: none !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* ================================
+   ⚙️ SETTINGS COMPONENT OPTIMIZATIONS
+   ================================ */
+
+/* Simplified Settings Sections */
+.performance-mode .settings-section {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.performance-mode .setting-item:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ================================
+   🎪 ANIMATION OVERRIDES
+   ================================ */
+
+/* Disable All Keyframe Animations */
+.performance-mode * {
+    animation-name: none !important;
+}
+
+/* Disable Specific Animations */
+.performance-mode .criticalAlert,
+.performance-mode .neonGlow,
+.performance-mode .neonPulse,
+.performance-mode .synthwavePulse,
+.performance-mode .cyberpunkGradient,
+.performance-mode .synthwaveGradient,
+.performance-mode .matrixFlicker,
+.performance-mode .statScan,
+.performance-mode .dataScan,
+.performance-mode .menuSlideIn,
+.performance-mode .slideInUp,
+.performance-mode .slideInRight {
+    animation: none !important;
+}
+
+/* ================================
+   📱 MOBILE PERFORMANCE MODE
+   ================================ */
+
+@media (max-width: 768px) {
+    .performance-mode .hud-item {
+        background: rgba(0, 0, 0, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+    
+    .performance-mode #openmenu {
+        background: rgba(0, 0, 0, 0.95) !important;
+    }
+    
+    .performance-mode .baseplate {
+        background: rgba(0, 0, 0, 0.95) !important;
+    }
+}
+
+/* ================================
+   🔧 LOW-END DEVICE OPTIMIZATIONS
+   ================================ */
+
+/* Ultra Performance Mode (for very low-end devices) */
+.ultra-performance-mode,
+.ultra-performance-mode * {
+    /* Remove all visual effects */
+    background: #000000 !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 4px !important;
+    color: #ffffff !important;
+    
+    /* Disable all effects */
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* ================================
+   🎮 GPU OPTIMIZATION
+   ================================ */
+
+/* Disable GPU-intensive properties */
+.performance-mode * {
+    /* Force software rendering for complex elements */
+    transform: translateZ(0) !important;
+    will-change: auto !important;
+    
+    /* Simplify gradients */
+    background-image: none !important;
+}
+
+/* Reduce repaints and reflows */
+.performance-mode .hud-item,
+.performance-mode .q-item,
+.performance-mode .q-card {
+    contain: layout style paint !important;
+}
+
+/* ================================
+   💾 MEMORY OPTIMIZATION
+   ================================ */
+
+/* Reduce memory usage */
+.performance-mode {
+    /* Optimize font rendering */
+    font-smooth: never !important;
+    -webkit-font-smoothing: none !important;
+    -moz-osx-font-smoothing: unset !important;
+    
+    /* Disable subpixel rendering */
+    transform-style: flat !important;
+    backface-visibility: hidden !important;
+}
+
+/* ================================
+   📊 PERFORMANCE INDICATORS
+   ================================ */
+
+/* Performance Mode Indicator */
+.performance-mode::after {
+    content: 'Performance Mode Active';
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 165, 0, 0.9);
+    color: black;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* FPS Display for Performance Monitoring */
+.performance-fps-counter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: lime;
+    padding: 4px 8px;
+    font-family: monospace;
+    font-size: 12px;
+    border-radius: 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ================================
+   🛠️ DEVELOPER UTILITIES
+   ================================ */
+
+/* Performance Debug Mode */
+.performance-debug * {
+    outline: 1px solid rgba(255, 165, 0, 0.5) !important;
+}
+
+.performance-debug *::before {
+    content: 'PERF' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    font-size: 8px !important;
+    background: orange !important;
+    color: black !important;
+    padding: 1px 2px !important;
+    z-index: 99999 !important;
+}
+
+/* ================================
+   📏 RESPONSIVE PERFORMANCE
+   ================================ */
+
+/* Tablet Performance Adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .performance-mode .hud-item {
+        background: rgba(0, 0, 0, 0.85) !important;
+    }
+}
+
+/* Phone Performance Adjustments */
+@media (max-width: 480px) {
+    .performance-mode * {
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+        padding: 4px !important;
+        margin: 2px !important;
+    }
+    
+    .performance-mode .hud-item {
+        height: 40px !important;
+        padding: 4px 8px !important;
+    }
+}
+
+/* ================================
+   🎯 PERFORMANCE MODE PRESETS
+   ================================ */
+
+/* Balanced Performance (Default Performance Mode) */
+.performance-balanced {
+    /* Keep essential animations */
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+}
+
+/* Maximum Performance (Ultra Low-End) */
+.performance-maximum {
+    /* Remove everything non-essential */
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #666 !important;
+    font-family: monospace !important;
+}
+
+/* ================================
+   ✅ PERFORMANCE MODE UTILITIES
+   ================================ */
+
+.perf-hide {
+    display: none !important;
+}
+
+.perf-show {
+    display: block !important;
+}
+
+.perf-simplify {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+/* ================================
+   🎪 FINAL PERFORMANCE CLEANUP
+   ================================ */
+
+/* Ensure no animations leak through */
+.performance-mode *,
+.performance-mode *::before,
+.performance-mode *::after {
+    animation: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 0 !important;
+    animation-fill-mode: none !important;
+    animation-direction: normal !important;
+    animation-play-state: paused !important;
+}
+
+/* Clean slate for complex selectors */
+.performance-mode [class*="glow"],
+.performance-mode [class*="pulse"],
+.performance-mode [class*="scan"],
+.performance-mode [class*="fade"],
+.performance-mode [class*="slide"],
+.performance-mode [class*="bounce"] {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+}

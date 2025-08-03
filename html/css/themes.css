@@ -1,0 +1,615 @@
+/* ================================
+   🎨 ENHANCED HUD - THEME SYSTEM
+   ================================
+   
+   Theme-specific styles and effects
+   Version: 3.1.0
+   
+   Cyberpunk, Synthwave, Matrix themes
+   with unique visual characteristics
+   ================================ */
+
+/* ================================
+   🌈 THEME BASE SYSTEM
+   ================================ */
+
+.theme-cyberpunk,
+.theme-synthwave,
+.theme-matrix {
+    transition: all var(--duration-slow) var(--ease-in-out);
+}
+
+/* ================================
+   🔮 CYBERPUNK THEME
+   ================================ */
+
+.theme-cyberpunk {
+    --color-primary: #00ffff;
+    --color-secondary: #a020f0;
+    --color-accent: #ff9800;
+    --glow-primary: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    --glow-secondary: 0 0 20px #a020f0, 0 0 40px #a020f0;
+    --theme-gradient: linear-gradient(45deg, #00ffff, #a020f0);
+}
+
+.theme-cyberpunk .hud-item {
+    border-color: rgba(0, 255, 255, 0.3);
+    background: rgba(0, 20, 40, 0.8);
+}
+
+.theme-cyberpunk .hud-item.critical {
+    border-color: #ff4444;
+    box-shadow: 0 0 20px #ff4444, 0 0 40px #ff4444;
+    animation: cyberpunkAlert 1.5s ease-in-out infinite;
+}
+
+.theme-cyberpunk .stat-progress.health-bar {
+    background: linear-gradient(90deg, #ff4444, #ff6666);
+    box-shadow: 0 0 10px #ff4444;
+}
+
+.theme-cyberpunk .stat-progress.armor-bar {
+    background: linear-gradient(90deg, #00ffff, #40e0d0);
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.theme-cyberpunk .stat-progress.hunger-bar {
+    background: linear-gradient(90deg, #ff9800, #ffb74d);
+    box-shadow: 0 0 10px #ff9800;
+}
+
+.theme-cyberpunk .stat-progress.thirst-bar {
+    background: linear-gradient(90deg, #0080ff, #40a0ff);
+    box-shadow: 0 0 10px #0080ff;
+}
+
+.theme-cyberpunk .stat-progress.stress-bar {
+    background: linear-gradient(90deg, #a020f0, #c060ff);
+    box-shadow: 0 0 10px #a020f0;
+}
+
+.theme-cyberpunk .stat-progress.stamina-bar {
+    background: linear-gradient(90deg, #00ff80, #40ff99);
+    box-shadow: 0 0 10px #00ff80;
+}
+
+.theme-cyberpunk .menu-container {
+    border-color: #00ffff;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.1), rgba(0, 20, 40, 0.9));
+    box-shadow: 
+        0 0 50px rgba(0, 255, 255, 0.3),
+        inset 0 0 100px rgba(160, 32, 240, 0.1);
+}
+
+.theme-cyberpunk .title-primary {
+    background: linear-gradient(45deg, #00ffff, #a020f0, #ff9800);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: cyberpunkGradient 4s ease-in-out infinite;
+}
+
+/* ================================
+   🌊 SYNTHWAVE THEME
+   ================================ */
+
+.theme-synthwave {
+    --color-primary: #ff0080;
+    --color-secondary: #8000ff;
+    --color-accent: #00ffff;
+    --glow-primary: 0 0 20px #ff0080, 0 0 40px #ff0080;
+    --glow-secondary: 0 0 20px #8000ff, 0 0 40px #8000ff;
+    --theme-gradient: linear-gradient(45deg, #ff0080, #8000ff);
+}
+
+.theme-synthwave .hud-item {
+    border-color: rgba(255, 0, 128, 0.3);
+    background: rgba(40, 0, 60, 0.8);
+}
+
+.theme-synthwave .hud-item.critical {
+    border-color: #ff4444;
+    box-shadow: 0 0 20px #ff4444, 0 0 40px #ff4444;
+    animation: synthwaveAlert 1.5s ease-in-out infinite;
+}
+
+.theme-synthwave .stat-progress.health-bar {
+    background: linear-gradient(90deg, #ff0080, #ff40a0);
+    box-shadow: 0 0 10px #ff0080;
+}
+
+.theme-synthwave .stat-progress.armor-bar {
+    background: linear-gradient(90deg, #8000ff, #a040ff);
+    box-shadow: 0 0 10px #8000ff;
+}
+
+.theme-synthwave .stat-progress.hunger-bar {
+    background: linear-gradient(90deg, #ff8000, #ffa040);
+    box-shadow: 0 0 10px #ff8000;
+}
+
+.theme-synthwave .stat-progress.thirst-bar {
+    background: linear-gradient(90deg, #0080ff, #4099ff);
+    box-shadow: 0 0 10px #0080ff;
+}
+
+.theme-synthwave .stat-progress.stress-bar {
+    background: linear-gradient(90deg, #ff0080, #ff4099);
+    box-shadow: 0 0 10px #ff0080;
+}
+
+.theme-synthwave .stat-progress.stamina-bar {
+    background: linear-gradient(90deg, #8000ff, #9940ff);
+    box-shadow: 0 0 10px #8000ff;
+}
+
+.theme-synthwave .menu-container {
+    border-color: #ff0080;
+    background: radial-gradient(ellipse at center, rgba(255, 0, 128, 0.1), rgba(40, 0, 60, 0.9));
+    box-shadow: 
+        0 0 50px rgba(255, 0, 128, 0.3),
+        inset 0 0 100px rgba(128, 0, 255, 0.1);
+}
+
+.theme-synthwave .title-primary {
+    background: linear-gradient(45deg, #ff0080, #8000ff, #00ffff);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: synthwaveGradient 4s ease-in-out infinite;
+}
+
+/* Synthwave Grid Effect */
+.theme-synthwave::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 0, 128, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 128, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+    animation: synthwaveGrid 20s linear infinite;
+}
+
+/* ================================
+   🔋 MATRIX THEME
+   ================================ */
+
+.theme-matrix {
+    --color-primary: #00ff00;
+    --color-secondary: #008000;
+    --color-accent: #ffffff;
+    --glow-primary: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    --glow-secondary: 0 0 20px #008000, 0 0 40px #008000;
+    --theme-gradient: linear-gradient(45deg, #00ff00, #008000);
+}
+
+.theme-matrix .hud-item {
+    border-color: rgba(0, 255, 0, 0.3);
+    background: rgba(0, 20, 0, 0.8);
+    font-family: 'Courier New', monospace;
+}
+
+.theme-matrix .hud-item.critical {
+    border-color: #ff4444;
+    box-shadow: 0 0 20px #ff4444, 0 0 40px #ff4444;
+    animation: matrixAlert 1.5s ease-in-out infinite;
+}
+
+.theme-matrix .stat-progress.health-bar {
+    background: linear-gradient(90deg, #ff4444, #ff6666);
+    box-shadow: 0 0 10px #ff4444;
+}
+
+.theme-matrix .stat-progress.armor-bar {
+    background: linear-gradient(90deg, #00ff00, #40ff40);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.theme-matrix .stat-progress.hunger-bar {
+    background: linear-gradient(90deg, #ffff00, #ffff40);
+    box-shadow: 0 0 10px #ffff00;
+}
+
+.theme-matrix .stat-progress.thirst-bar {
+    background: linear-gradient(90deg, #00ffff, #40ffff);
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.theme-matrix .stat-progress.stress-bar {
+    background: linear-gradient(90deg, #ff8000, #ff9040);
+    box-shadow: 0 0 10px #ff8000;
+}
+
+.theme-matrix .stat-progress.stamina-bar {
+    background: linear-gradient(90deg, #00ff00, #40ff40);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.theme-matrix .menu-container {
+    border-color: #00ff00;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 0, 0.1), rgba(0, 20, 0, 0.9));
+    box-shadow: 
+        0 0 50px rgba(0, 255, 0, 0.3),
+        inset 0 0 100px rgba(0, 128, 0, 0.1);
+}
+
+.theme-matrix .title-primary {
+    color: #00ff00;
+    text-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 30px #00ff00;
+    animation: matrixFlicker 3s ease-in-out infinite;
+}
+
+/* Matrix Rain Effect */
+.theme-matrix::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+/* ================================
+   🎇 COMPASS THEMES
+   ================================ */
+
+.theme-cyberpunk .baseplate {
+    border-color: #00ffff;
+    background: rgba(0, 20, 40, 0.9);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.theme-cyberpunk .street1,
+.theme-cyberpunk .street2 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.theme-cyberpunk .pointer {
+    color: #ff9800;
+    text-shadow: 0 0 15px #ff9800, 0 0 25px #ff9800;
+}
+
+.theme-synthwave .baseplate {
+    border-color: #ff0080;
+    background: rgba(40, 0, 60, 0.9);
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+.theme-synthwave .street1,
+.theme-synthwave .street2 {
+    color: #ff0080;
+    text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+}
+
+.theme-synthwave .pointer {
+    color: #8000ff;
+    text-shadow: 0 0 15px #8000ff, 0 0 25px #8000ff;
+}
+
+.theme-matrix .baseplate {
+    border-color: #00ff00;
+    background: rgba(0, 20, 0, 0.9);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.theme-matrix .street1,
+.theme-matrix .street2 {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+.theme-matrix .pointer {
+    color: #ffffff;
+    text-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff;
+}
+
+/* ================================
+   🚗 VEHICLE HUD THEMES
+   ================================ */
+
+.theme-cyberpunk .square,
+.theme-cyberpunk .circle {
+    border-color: #a020f0;
+    box-shadow: 0 0 20px #a020f0, 0 0 40px #a020f0;
+}
+
+.theme-synthwave .square,
+.theme-synthwave .circle {
+    border-color: #8000ff;
+    box-shadow: 0 0 20px #8000ff, 0 0 40px #8000ff;
+}
+
+.theme-matrix .square,
+.theme-matrix .circle {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+}
+
+/* ================================
+   💫 PARTICLE EFFECTS
+   ================================ */
+
+.theme-cyberpunk .particle-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    animation: cyberpunkParticle 3s ease-in-out infinite;
+}
+
+.theme-synthwave .particle-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 128, 0.1) 0%, transparent 70%);
+    animation: synthwaveParticle 3s ease-in-out infinite;
+}
+
+.theme-matrix .particle-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.1) 0%, transparent 70%);
+    animation: matrixParticle 3s ease-in-out infinite;
+}
+
+/* ================================
+   🎭 THEME TRANSITION EFFECTS
+   ================================ */
+
+.theme-transition {
+    animation: themeTransition 1s ease-in-out;
+}
+
+.theme-transition .hud-item {
+    animation: itemTransition 0.8s ease-in-out;
+}
+
+.theme-transition .menu-container {
+    animation: menuTransition 1.2s ease-in-out;
+}
+
+/* ================================
+   🎪 ANIMATION KEYFRAMES
+   ================================ */
+
+/* Cyberpunk Animations */
+@keyframes cyberpunkAlert {
+    0%, 100% { 
+        box-shadow: 0 0 20px #ff4444, 0 0 40px #ff4444;
+        border-color: #ff4444;
+    }
+    50% { 
+        box-shadow: 0 0 50px #ff4444, 0 0 80px #ff4444, 0 0 100px #00ffff;
+        border-color: #00ffff;
+    }
+}
+
+@keyframes cyberpunkGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes cyberpunkParticle {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% { 
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.7;
+    }
+}
+
+/* Synthwave Animations */
+@keyframes synthwaveAlert {
+    0%, 100% { 
+        box-shadow: 0 0 20px #ff4444, 0 0 40px #ff4444;
+        border-color: #ff4444;
+    }
+    25% { 
+        box-shadow: 0 0 40px #ff0080, 0 0 60px #ff0080;
+        border-color: #ff0080;
+    }
+    75% { 
+        box-shadow: 0 0 40px #8000ff, 0 0 60px #8000ff;
+        border-color: #8000ff;
+    }
+}
+
+@keyframes synthwaveGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes synthwaveGrid {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+}
+
+@keyframes synthwaveParticle {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.2;
+    }
+    50% { 
+        transform: scale(1.3) rotate(270deg);
+        opacity: 0.6;
+    }
+}
+
+/* Matrix Animations */
+@keyframes matrixAlert {
+    0%, 100% { 
+        box-shadow: 0 0 20px #ff4444, 0 0 40px #ff4444;
+        border-color: #ff4444;
+    }
+    50% { 
+        box-shadow: 0 0 50px #00ff00, 0 0 80px #00ff00;
+        border-color: #00ff00;
+    }
+}
+
+@keyframes matrixFlicker {
+    0%, 100% { 
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        opacity: 1;
+    }
+    25% { 
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+        opacity: 0.8;
+    }
+    50% { 
+        text-shadow: 0 0 5px #00ff00;
+        opacity: 0.9;
+    }
+    75% { 
+        text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00;
+        opacity: 0.7;
+    }
+}
+
+@keyframes matrixParticle {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.2;
+    }
+    50% { 
+        transform: scale(1.1) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* Transition Animations */
+@keyframes themeTransition {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    50% { filter: hue-rotate(180deg) brightness(1.5); }
+    100% { filter: hue-rotate(360deg) brightness(1); }
+}
+
+@keyframes itemTransition {
+    0% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: scale(1.1) rotate(5deg);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes menuTransition {
+    0% { 
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ================================
+   🔊 SOUND VISUALIZATION
+   ================================ */
+
+.sound-visualizer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--color-primary) 0%, 
+        var(--color-secondary) 50%, 
+        var(--color-accent) 100%);
+    opacity: 0;
+    transition: opacity var(--anim-fast);
+}
+
+.sound-active .sound-visualizer {
+    opacity: 1;
+    animation: soundWave 0.5s ease-in-out;
+}
+
+@keyframes soundWave {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(1.2); }
+}
+
+/* ================================
+   🎯 THEME SPECIFIC UTILITIES
+   ================================ */
+
+.cyberpunk-glow {
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff !important;
+}
+
+.synthwave-glow {
+    box-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080 !important;
+}
+
+.matrix-glow {
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00 !important;
+}
+
+.theme-border-cyberpunk {
+    border-color: #00ffff !important;
+}
+
+.theme-border-synthwave {
+    border-color: #ff0080 !important;
+}
+
+.theme-border-matrix {
+    border-color: #00ff00 !important;
+}
+
+.theme-text-cyberpunk {
+    color: #00ffff !important;
+    text-shadow: 0 0 10px #00ffff !important;
+}
+
+.theme-text-synthwave {
+    color: #ff0080 !important;
+    text-shadow: 0 0 10px #ff0080 !important;
+}
+
+.theme-text-matrix {
+    color: #00ff00 !important;
+    text-shadow: 0 0 10px #00ff00 !important;
+}

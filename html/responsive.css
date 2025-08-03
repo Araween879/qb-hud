@@ -1,0 +1,1289 @@
+/* 🔧 ENHANCED RESPONSIVE DESIGN FOR NEON THEME - KOMPAKT */
+
+.responsive {
+    position: absolute !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 🔧 ENHANCED BASE RESPONSIVE STYLES - KLEINERE HUD-ELEMENTE */
+@media (min-width: 800px) {
+    .responsive {
+        margin-left: 28vh !important;        /* Reduziert von 32vh */
+        transform: scale(0.9, 0.9) !important; /* 10% kleiner */
+        bottom: 5.5vh !important;            /* Angepasst von 6.9vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 45px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 6px currentColor) !important; /* Reduziert */
+    }
+    
+    #Speedo {
+        font-size: 60px !important;         /* Reduziert von 70px */
+        filter: drop-shadow(0 0 12px var(--neon-cyan)) !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 12px !important;         /* Reduziert von 14px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #Icons {
+        font-size: 17px !important;         /* Reduziert von 19.5px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 6vh !important;                /* Reduziert von 7vh */
+        bottom: 5.5vh !important;            /* Angepasst */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 9vh !important;                /* Reduziert von 11vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 7.5vh !important;              /* Reduziert von 8.5vh */
+    }
+    
+    speed {
+        font-size: 1.8vh !important;        /* Reduziert von 2vh */
+        text-shadow: 0 0 12px var(--neon-cyan), 0 0 20px var(--neon-cyan) !important;
+    }
+    
+    speed:after {
+        font-size: 0.8vh !important;        /* Reduziert von 0.9vh */
+        text-shadow: 0 0 8px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        font-size: 1.8vh !important;        /* Reduziert von 2vh */
+        text-shadow: 0 0 12px var(--neon-orange), 0 0 20px var(--neon-orange) !important;
+    }
+    
+    altitude:after {
+        font-size: 0.8vh !important;        /* Reduziert von 0.9vh */
+        text-shadow: 0 0 8px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 2vh !important;               /* Reduziert von 2.5vh */
+        bottom: 5.2% !important;            /* Angepasst von 6% */
+        width: 24vh !important;             /* Reduziert von 29vh */
+        height: 15vh !important;            /* Reduziert von 18.5vh */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple) !important;
+        border-radius: 6px !important;      /* Reduziert von 8px */
+    }
+    
+    .circle {
+        left: 2.5vh !important;             /* Reduziert von 3.2vh */
+        width: 23vh !important;             /* Reduziert von 27.6vh */
+        bottom: 5.5% !important;            /* Angepasst von 6.9% */
+        height: 18vh !important;            /* Reduziert von 22.9vh */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple) !important;
+    }
+}
+
+/* 🔧 ENHANCED 4K DISPLAY (3840x2160) - KOMPAKTER */
+@media (width: 3840px) and (height: 2160px) {
+    :root {
+        --glow-cyan: 0 0 25px var(--neon-cyan), 0 0 50px var(--neon-cyan);
+        --glow-purple: 0 0 25px var(--neon-purple), 0 0 50px var(--neon-purple);
+        --glow-red: 0 0 25px var(--neon-red), 0 0 50px var(--neon-red);
+        --glow-orange: 0 0 25px var(--neon-orange), 0 0 50px var(--neon-orange);
+    }
+    
+    .responsive {
+        margin-left: 28vh !important;       /* Reduziert von 32.8vh */
+        transform: scale(1.1, 1.1) !important; /* Reduziert von 1.3 */
+        bottom: 6.5vh !important;           /* Reduziert von 7.6vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 80px !important;         /* Reduziert von 100px */
+        margin-left: -38px !important;      /* Reduziert von -45px */
+        filter: drop-shadow(0 0 15px currentColor) !important;
+    }
+    
+    #Speedo {
+        font-size: 100px !important;        /* Reduziert von 125px */
+        filter: drop-shadow(0 0 25px var(--neon-cyan)) !important;
+    }
+    
+    #Speed {
+        font-size: 40px !important;         /* Reduziert von 50px */
+        text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan) !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 60px !important;         /* Reduziert von 75px */
+        left: 50% !important;
+        top: 15px !important;               /* Reduziert von 20px */
+        filter: drop-shadow(0 0 15px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 60px !important;         /* Reduziert von 75px */
+        left: 0% !important;
+        top: 15px !important;               /* Reduziert von 20px */
+        filter: drop-shadow(0 0 15px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 20px !important;         /* Reduziert von 25px */
+        filter: drop-shadow(0 0 12px currentColor) !important;
+    }
+    
+    #Altimeter {
+        font-size: 100px !important;        /* Reduziert von 125px */
+        left: 41% !important;
+        filter: drop-shadow(0 0 15px var(--neon-orange)) !important;
+    }
+    
+    #AltimeterValue {
+        font-size: 100px !important;        /* Reduziert von 125px */
+        left: -9% !important;
+        filter: drop-shadow(0 0 15px var(--neon-orange)) !important;
+    }
+    
+    #Alt {
+        font-size: 40px !important;         /* Reduziert von 50px */
+        text-shadow: 0 0 20px var(--neon-orange), 0 0 40px var(--neon-orange) !important;
+    }
+    
+    #Icons {
+        font-size: 40px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 12px currentColor) !important;
+    }
+    
+    #SeatbeltLocation {
+        left: 35% !important;
+        top: -35px !important;              /* Reduziert von -40px */
+        filter: drop-shadow(0 0 12px currentColor) !important;
+    }
+    
+    #SeatbeltIcon {
+        font-size: 32px !important;         /* Reduziert von 40px */
+        filter: drop-shadow(0 0 12px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 4.5vh !important;             /* Reduziert von 5.3vh */
+        bottom: 6vh !important;             /* Reduziert von 7.1vh */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 7vh !important;               /* Reduziert von 8.2vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 5.5vh !important;             /* Reduziert von 6.5vh */
+    }
+    
+    speed {
+        font-size: 1.0vh !important;        /* Reduziert von 1.2vh */
+    }
+    
+    speed:after {
+        font-size: 0.5vh !important;        /* Reduziert von 0.6vh */
+    }
+    
+    altitude {
+        font-size: 1.0vh !important;        /* Reduziert von 1.2vh */
+    }
+    
+    altitude:after {
+        font-size: 0.5vh !important;        /* Reduziert von 0.6vh */
+    }
+    
+    .square {
+        left: 2vh !important;               /* Reduziert von 2.4vh */
+        bottom: 5.5% !important;            /* Reduziert von 6.1% */
+        width: 25vh !important;             /* Reduziert von 29.3vh */
+        height: 16vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 30px var(--neon-purple), 0 0 60px var(--neon-purple) !important;
+    }
+    
+    .circle {
+        left: 3vh !important;               /* Reduziert von 3.6vh */
+        width: 23vh !important;             /* Reduziert von 27.6vh */
+        bottom: 6% !important;              /* Reduziert von 6.9% */
+        height: 18vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 30px var(--neon-purple), 0 0 60px var(--neon-purple) !important;
+    }
+
+    /* 🔧 ENHANCED MENU FOR 4K - KOMPAKTER */
+    div#openmenu {
+        width: 40% !important;              /* Reduziert von 45% */
+        max-width: 750px !important;        /* Reduziert von 900px */
+        max-height: 65vh !important;        /* Begrenzt Höhe */
+        border-width: 2px !important;       /* Reduziert von 3px */
+        box-shadow: var(--shadow-intense), 0 0 40px var(--neon-purple) !important;
+    }
+    
+    .text-h6 {
+        font-size: 20px !important;         /* Reduziert von 24px */
+        text-shadow: 0 0 25px currentColor !important;
+    }
+    
+    .text-h7 {
+        font-size: 16px !important;         /* Reduziert von 18px */
+    }
+    
+    .q-btn {
+        font-size: 12px !important;         /* Reduziert */
+        padding: 8px 16px !important;       /* Kompakter */
+    }
+}
+
+/* 🔧 ENHANCED ULTRAWIDE (3440x1440) - KOMPAKTER */
+@media (width: 3440px) and (height: 1440px) {
+    :root {
+        --glow-cyan: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+        --glow-purple: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple);
+        --glow-red: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+        --glow-orange: 0 0 20px var(--neon-orange), 0 0 40px var(--neon-orange);
+    }
+    
+    .responsive {
+        margin-left: 28vh !important;       /* Reduziert von 33vh */
+        transform: scale(1.1, 1.1) !important; /* Reduziert von 1.3 */
+        bottom: 6.5vh !important;           /* Reduziert von 7.6vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 45px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 12px currentColor) !important;
+    }
+    
+    #Speedo {
+        font-size: 60px !important;         /* Reduziert von 70px */
+        filter: drop-shadow(0 0 20px var(--neon-cyan)) !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 12px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 12px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 12px !important;         /* Reduziert von 14px */
+        filter: drop-shadow(0 0 10px currentColor) !important;
+    }
+    
+    #Icons {
+        font-size: 17px !important;         /* Reduziert von 19.5px */
+        filter: drop-shadow(0 0 10px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 5.5vh !important;             /* Reduziert von 6.4vh */
+        bottom: 5.8vh !important;           /* Angepasst von 6.85vh */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 9.5vh !important;             /* Reduziert von 11.2vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 7.5vh !important;             /* Reduziert von 8.8vh */
+    }
+    
+    speed {
+        font-size: 1.2vh !important;        /* Reduziert von 1.4vh */
+        text-shadow: 0 0 16px var(--neon-cyan), 0 0 28px var(--neon-cyan) !important;
+    }
+    
+    speed:after {
+        font-size: 0.6vh !important;        /* Reduziert von 0.7vh */
+        text-shadow: 0 0 12px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        font-size: 1.2vh !important;        /* Reduziert von 1.4vh */
+        text-shadow: 0 0 16px var(--neon-orange), 0 0 28px var(--neon-orange) !important;
+    }
+    
+    altitude:after {
+        font-size: 0.6vh !important;        /* Reduziert von 0.7vh */
+        text-shadow: 0 0 12px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 2vh !important;               /* Reduziert von 2.3vh */
+        bottom: 5.5% !important;            /* Reduziert von 6.1% */
+        width: 25vh !important;             /* Reduziert von 29.3vh */
+        height: 16vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 25px var(--neon-purple), 0 0 50px var(--neon-purple) !important;
+    }
+    
+    .circle {
+        left: 3vh !important;               /* Reduziert von 3.5vh */
+        width: 23vh !important;             /* Reduziert von 27.6vh */
+        bottom: 6% !important;              /* Reduziert von 6.9% */
+        height: 18vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 25px var(--neon-purple), 0 0 50px var(--neon-purple) !important;
+    }
+
+    /* 🔧 ENHANCED MENU FOR ULTRAWIDE - KOMPAKTER */
+    div#openmenu {
+        width: 45% !important;              /* Reduziert von 50% */
+        max-width: 800px !important;        /* Reduziert von 1000px */
+        max-height: 70vh !important;        /* Begrenzt Höhe */
+    }
+}
+
+/* 🔧 ENHANCED QHD (2560x1440) - KOMPAKTER */
+@media (width: 2560px) and (height: 1440px) {
+    :root {
+        --glow-cyan: 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+        --glow-purple: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple);
+        --glow-red: 0 0 15px var(--neon-red), 0 0 30px var(--neon-red);
+        --glow-orange: 0 0 15px var(--neon-orange), 0 0 30px var(--neon-orange);
+    }
+    
+    .responsive {
+        margin-left: 28vh !important;       /* Reduziert von 33.5vh */
+        transform: scale(1.1, 1.1) !important; /* Reduziert von 1.3 */
+        bottom: 6vh !important;             /* Reduziert von 7.2vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 45px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 10px currentColor) !important;
+    }
+    
+    #Speedo {
+        font-size: 60px !important;         /* Reduziert von 70px */
+        filter: drop-shadow(0 0 16px var(--neon-cyan)) !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 10px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 10px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 12px !important;         /* Reduziert von 14px */
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #Icons {
+        font-size: 17px !important;         /* Reduziert von 19.5px */
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 5.5vh !important;             /* Reduziert von 6.3vh */
+        bottom: 5.5vh !important;           /* Reduziert von 6.5vh */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 9.5vh !important;             /* Reduziert von 11vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 7.5vh !important;             /* Reduziert von 8.8vh */
+    }
+    
+    speed {
+        font-size: 1.2vh !important;        /* Reduziert von 1.4vh */
+        text-shadow: 0 0 14px var(--neon-cyan), 0 0 24px var(--neon-cyan) !important;
+    }
+    
+    speed:after {
+        font-size: 0.6vh !important;        /* Reduziert von 0.7vh */
+        text-shadow: 0 0 10px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        font-size: 1.2vh !important;        /* Reduziert von 1.4vh */
+        text-shadow: 0 0 14px var(--neon-orange), 0 0 24px var(--neon-orange) !important;
+    }
+    
+    altitude:after {
+        font-size: 0.6vh !important;        /* Reduziert von 0.7vh */
+        text-shadow: 0 0 10px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 2vh !important;               /* Reduziert von 2.3vh */
+        bottom: 5.2% !important;            /* Reduziert von 6% */
+        width: 25vh !important;             /* Reduziert */
+        height: 16vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple) !important;
+    }
+    
+    .circle {
+        left: 3vh !important;               /* Reduziert von 3.5vh */
+        width: 23vh !important;             /* Reduziert von 27.6vh */
+        bottom: 5.8% !important;            /* Reduziert von 6.7% */
+        height: 18vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple) !important;
+    }
+}
+
+/* 🔧 ENHANCED QHD ULTRAWIDE (2560x1080) - KOMPAKTER */
+@media (width: 2560px) and (height: 1080px) {
+    .q-ml-xl {
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #Speedo {
+        filter: drop-shadow(0 0 14px var(--neon-cyan)) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 5.5vh !important;             /* Reduziert von 6.5vh */
+        bottom: 4.8vh !important;           /* Reduziert von 5.7vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 5.5vh !important;             /* Reduziert von 6.5vh */
+    }
+    
+    speed {
+        text-shadow: 0 0 12px var(--neon-cyan), 0 0 20px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        text-shadow: 0 0 12px var(--neon-orange), 0 0 20px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 2vh !important;               /* Reduziert von 2.5vh */
+        bottom: 5.2% !important;            /* Reduziert von 6% */
+        width: 25vh !important;             /* Reduziert */
+        height: 16vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 16px var(--neon-purple), 0 0 32px var(--neon-purple) !important;
+    }
+    
+    .circle {
+        left: 2.8vh !important;             /* Reduziert von 3.2vh */
+        width: 23vh !important;             /* Reduziert von 27.6vh */
+        bottom: 5.8% !important;            /* Reduziert von 6.9% */
+        height: 18vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 16px var(--neon-purple), 0 0 32px var(--neon-purple) !important;
+    }
+}
+
+/* 🔧 ENHANCED QHD PORTRAIT (1920x1440) - KOMPAKTER */
+@media (width: 1920px) and (height: 1440px) {
+    .responsive {
+        margin-left: 27vh !important;       /* Reduziert von 32vh */
+        transform: scale(1.0, 1.0) !important; /* Reduziert von 1.2 */
+        bottom: 6.5vh !important;           /* Reduziert von 7.4vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 45px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #Speedo {
+        font-size: 60px !important;         /* Reduziert von 70px */
+        filter: drop-shadow(0 0 14px var(--neon-cyan)) !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 8px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 12px !important;         /* Reduziert von 14px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #Icons {
+        font-size: 17px !important;         /* Reduziert von 19.5px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 5.5vh !important;             /* Reduziert von 6.3vh */
+        bottom: 5.8vh !important;           /* Reduziert von 6.9vh */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 8.5vh !important;             /* Reduziert von 10vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 7vh !important;               /* Reduziert von 8vh */
+    }
+    
+    speed {
+        font-size: 1.4vh !important;        /* Reduziert von 1.6vh */
+        text-shadow: 0 0 13px var(--neon-cyan), 0 0 22px var(--neon-cyan) !important;
+    }
+    
+    speed:after {
+        font-size: 0.6vh !important;        /* Reduziert von 0.7vh */
+        text-shadow: 0 0 8px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        font-size: 1.4vh !important;        /* Reduziert von 1.6vh */
+        text-shadow: 0 0 13px var(--neon-orange), 0 0 22px var(--neon-orange) !important;
+    }
+    
+    altitude:after {
+        font-size: 0.6vh !important;        /* Reduziert von 0.7vh */
+        text-shadow: 0 0 8px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 1.8vh !important;             /* Reduziert von 2vh */
+        bottom: 5.2% !important;            /* Reduziert von 6% */
+        width: 25vh !important;             /* Reduziert */
+        height: 16vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 18px var(--neon-purple), 0 0 36px var(--neon-purple) !important;
+    }
+    
+    .circle {
+        left: 2.3vh !important;             /* Reduziert von 2.7vh */
+        width: 23vh !important;             /* Reduziert von 27.6vh */
+        bottom: 6% !important;              /* Reduziert von 7% */
+        height: 18vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 18px var(--neon-purple), 0 0 36px var(--neon-purple) !important;
+    }
+}
+
+/* 🔧 ENHANCED FULL HD PORTRAIT (1920x1200) - KOMPAKTER */
+@media (width: 1920px) and (height: 1200px) {
+    .responsive {
+        margin-left: 27vh !important;       /* Reduziert von 31.5vh */
+        transform: scale(0.9, 0.9) !important; /* Reduziert von 1.0 */
+        bottom: 5.5vh !important;           /* Reduziert von 6.4vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 45px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #Speedo {
+        font-size: 60px !important;         /* Reduziert von 70px */
+        filter: drop-shadow(0 0 12px var(--neon-cyan)) !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 12px !important;         /* Reduziert von 14px */
+        filter: drop-shadow(0 0 5px currentColor) !important;
+    }
+    
+    #Icons {
+        font-size: 17px !important;         /* Reduziert von 19.5px */
+        filter: drop-shadow(0 0 5px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 5.8vh !important;             /* Reduziert von 6.6vh */
+        bottom: 5.2vh !important;           /* Reduziert von 6.05vh */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 8.5vh !important;             /* Reduziert von 10vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 7vh !important;               /* Reduziert von 8vh */
+    }
+    
+    speed {
+        font-size: 1.6vh !important;        /* Reduziert von 1.8vh */
+        text-shadow: 0 0 12px var(--neon-cyan), 0 0 20px var(--neon-cyan) !important;
+    }
+    
+    speed:after {
+        font-size: 0.7vh !important;        /* Reduziert von 0.8vh */
+        text-shadow: 0 0 6px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        font-size: 1.6vh !important;        /* Reduziert von 1.8vh */
+        text-shadow: 0 0 12px var(--neon-orange), 0 0 20px var(--neon-orange) !important;
+    }
+    
+    altitude:after {
+        font-size: 0.7vh !important;        /* Reduziert von 0.8vh */
+        text-shadow: 0 0 6px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 1.9vh !important;             /* Reduziert von 2.2vh */
+        bottom: 5.2% !important;            /* Reduziert von 6% */
+        width: 25vh !important;             /* Reduziert */
+        height: 16vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple) !important;
+    }
+    
+    .circle {
+        left: 2.8vh !important;             /* Reduziert von 3.2vh */
+        width: 23vh !important;             /* Reduziert von 27.6vh */
+        bottom: 6% !important;              /* Reduziert von 7% */
+        height: 18vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple) !important;
+    }
+}
+
+/* 🔧 ENHANCED FULL HD (1920x1080) - MOST COMMON RESOLUTION - KOMPAKTER */
+@media (width: 1920px) and (height: 1080px) {
+    .responsive {
+        margin-left: 27vh !important;       /* Reduziert von 32vh */
+        transform: scale(0.9, 0.9) !important; /* 10% kleiner */
+        bottom: 5.8vh !important;           /* Reduziert von 6.9vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 45px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #Speedo {
+        font-size: 60px !important;         /* Reduziert von 70px */
+        filter: drop-shadow(0 0 12px var(--neon-cyan)) !important;
+        animation: neonPulse 4s ease-in-out infinite !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 32px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 6px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 12px !important;         /* Reduziert von 14px */
+        filter: drop-shadow(0 0 5px currentColor) !important;
+    }
+    
+    #Icons {
+        font-size: 17px !important;         /* Reduziert von 19.5px */
+        filter: drop-shadow(0 0 5px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 6vh !important;               /* Reduziert von 7.2vh */
+        bottom: 5.5vh !important;           /* Reduziert von 6.6vh */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 9.5vh !important;             /* Reduziert von 11vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 7.5vh !important;             /* Reduziert von 8.5vh */
+    }
+    
+    speed {
+        font-size: 1.8vh !important;        /* Reduziert von 2vh */
+        text-shadow: 0 0 12px var(--neon-cyan), 0 0 20px var(--neon-cyan) !important;
+        animation: neonGlow 3s ease-in-out infinite !important;
+    }
+    
+    speed:after {
+        font-size: 1.0vh !important;        /* Reduziert von 1.2vh */
+        text-shadow: 0 0 6px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        font-size: 1.8vh !important;        /* Reduziert von 2vh */
+        text-shadow: 0 0 12px var(--neon-orange), 0 0 20px var(--neon-orange) !important;
+        animation: neonGlow 3s ease-in-out infinite !important;
+    }
+    
+    altitude:after {
+        font-size: 0.8vh !important;        /* Reduziert von 0.9vh */
+        text-shadow: 0 0 6px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 2vh !important;               /* Reduziert von 2.5vh */
+        bottom: 5.2% !important;            /* Reduziert von 6% */
+        width: 25vh !important;             /* Reduziert */
+        height: 16vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 16px var(--neon-purple), 0 0 32px var(--neon-purple) !important;
+        animation: neonPulse 4s ease-in-out infinite !important;
+    }
+    
+    .circle {
+        left: 3.2vh !important;             /* Reduziert von 3.7vh */
+        width: 23vh !important;             /* Reduziert von 27.3vh */
+        bottom: 6% !important;              /* Reduziert von 7% */
+        height: 18vh !important;            /* Reduziert */
+        border-width: 2px !important;       /* Reduziert von 4px */
+        box-shadow: 0 0 16px var(--neon-purple), 0 0 32px var(--neon-purple) !important;
+        animation: neonPulse 4s ease-in-out infinite !important;
+    }
+
+    /* 🔧 ENHANCED MENU FOR FULL HD - KOMPAKTER */
+    div#openmenu {
+        width: 45% !important;              /* Reduziert von 55% */
+        max-width: 700px !important;        /* Reduziert von 900px */
+        min-width: 500px !important;        /* Reduziert von 600px */
+        max-height: 70vh !important;        /* Begrenzt Höhe */
+        border-width: 2px !important;
+        box-shadow: var(--shadow-intense), 0 0 25px var(--neon-purple) !important;
+    }
+    
+    .text-h6 {
+        font-size: 16px !important;         /* Reduziert von 18px */
+        text-shadow: 0 0 16px currentColor !important;
+    }
+    
+    .text-h7 {
+        font-size: 12px !important;         /* Reduziert von 14px */
+    }
+    
+    .q-btn {
+        font-size: 11px !important;         /* Reduziert von 12px */
+        padding: 6px 12px !important;       /* Kompakter */
+    }
+    
+    .q-checkbox__inner {
+        font-size: 18px !important;         /* Reduziert von 20px */
+    }
+    
+    .q-tab {
+        min-height: 45px !important;        /* Reduziert */
+        font-size: 11px !important;         /* Reduziert */
+    }
+}
+
+/* 🔧 ENHANCED HD (1280x720) - LOWER END SYSTEMS - STARK REDUZIERT */
+@media (width: 1280px) and (height: 720px) {
+    :root {
+        --glow-cyan: 0 0 6px var(--neon-cyan), 0 0 12px var(--neon-cyan);
+        --glow-purple: 0 0 6px var(--neon-purple), 0 0 12px var(--neon-purple);
+        --glow-red: 0 0 6px var(--neon-red), 0 0 12px var(--neon-red);
+        --glow-orange: 0 0 6px var(--neon-orange), 0 0 12px var(--neon-orange);
+    }
+    
+    .responsive {
+        margin-left: 25vh !important;       /* Reduziert von 30vh */
+        transform: scale(0.55, 0.55) !important; /* Reduziert von 0.65 */
+        bottom: 4vh !important;             /* Reduziert von 4.7vh */
+    }
+    
+    .q-ml-xl {
+        font-size: 40px !important;         /* Reduziert von 50px */
+        filter: drop-shadow(0 0 4px currentColor) !important;
+    }
+    
+    #Speedo {
+        font-size: 55px !important;         /* Reduziert von 70px */
+        filter: drop-shadow(0 0 8px var(--neon-cyan)) !important;
+    }
+    
+    #FuelGaugeBackground {
+        font-size: 28px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 4px currentColor) !important;
+    }
+    
+    #FuelGaugeValue {
+        font-size: 28px !important;         /* Reduziert von 36px */
+        filter: drop-shadow(0 0 4px currentColor) !important;
+    }
+    
+    #FuelGaugeIcon {
+        font-size: 11px !important;         /* Reduziert von 14px */
+        filter: drop-shadow(0 0 3px currentColor) !important;
+    }
+    
+    #Icons {
+        font-size: 15px !important;         /* Reduziert von 19.5px */
+        filter: drop-shadow(0 0 3px currentColor) !important;
+    }
+    
+    #speedometer {
+        position: relative;
+        left: 2vh !important;
+    }
+    
+    #fuelgauge {
+        position: relative;
+        left: 7vh !important;               /* Reduziert von 8.6vh */
+        bottom: 4.5vh !important;           /* Reduziert von 5.2vh */
+    }
+    
+    #altitudegauge {
+        position: relative;
+        left: 9.5vh !important;             /* Reduziert von 11vh */
+    }
+    
+    #seatbelt {
+        position: relative;
+        left: 7.5vh !important;             /* Reduziert von 8.5vh */
+    }
+    
+    speed {
+        font-size: 2.5vh !important;        /* Reduziert von 3vh */
+        text-shadow: 0 0 8px var(--neon-cyan), 0 0 14px var(--neon-cyan) !important;
+    }
+    
+    speed:after {
+        font-size: 1.2vh !important;        /* Reduziert von 1.4vh */
+        text-shadow: 0 0 5px var(--neon-cyan) !important;
+    }
+    
+    altitude {
+        font-size: 2.5vh !important;        /* Reduziert von 3vh */
+        text-shadow: 0 0 8px var(--neon-orange), 0 0 14px var(--neon-orange) !important;
+    }
+    
+    altitude:after {
+        font-size: 1.2vh !important;        /* Reduziert von 1.4vh */
+        text-shadow: 0 0 5px var(--neon-orange) !important;
+    }
+    
+    .square {
+        left: 2vh !important;               /* Reduziert von 2.5vh */
+        bottom: 5% !important;              /* Reduziert von 6% */
+        width: 22vh !important;             /* Stark reduziert */
+        height: 14vh !important;            /* Stark reduziert */
+        border-width: 1px !important;       /* Reduziert von 2px */
+        box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple) !important;
+    }
+    
+    .circle {
+        left: 3.5vh !important;             /* Reduziert von 4vh */
+        width: 20vh !important;             /* Stark reduziert von 27.6vh */
+        bottom: 5.8% !important;            /* Reduziert von 6.9% */
+        height: 16vh !important;            /* Stark reduziert */
+        border-width: 1px !important;       /* Reduziert von 2px */
+        box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple) !important;
+    }
+
+    /* 🔧 OPTIMIZED MENU FOR HD - STARK KOMPAKTER */
+    div#openmenu {
+        width: 60% !important;              /* Reduziert von 70% */
+        min-width: 400px !important;        /* Reduziert von 500px */
+        max-width: 550px !important;        /* Reduziert von 700px */
+        max-height: 60vh !important;        /* Stark begrenzt */
+        border-width: 1px !important;
+        box-shadow: var(--shadow-intense), 0 0 15px var(--neon-purple) !important;
+    }
+    
+    .text-h6 {
+        font-size: 14px !important;         /* Reduziert von 16px */
+        text-shadow: 0 0 12px currentColor !important;
+    }
+    
+    .text-h7 {
+        font-size: 10px !important;         /* Reduziert von 12px */
+    }
+    
+    .q-btn {
+        font-size: 9px !important;          /* Reduziert von 10px */
+        padding: 4px 8px !important;        /* Stark kompakter */
+    }
+    
+    .q-checkbox__inner {
+        font-size: 14px !important;         /* Reduziert von 16px */
+    }
+    
+    .q-tab {
+        min-height: 40px !important;        /* Reduziert von 48px */
+        font-size: 10px !important;         /* Reduziert */
+    }
+    
+    .q-item {
+        padding: 6px 8px !important;        /* Stark kompakter */
+        margin: 1px 0 !important;           /* Reduziert */
+    }
+}
+
+/* 🔧 MOBILE/TABLET RESPONSIVE DESIGN - STARK KOMPAKT */
+@media (max-width: 1366px) {
+    :root {
+        --glow-cyan: 0 0 8px var(--neon-cyan), 0 0 16px var(--neon-cyan);
+        --glow-purple: 0 0 8px var(--neon-purple), 0 0 16px var(--neon-purple);
+        --glow-red: 0 0 8px var(--neon-red), 0 0 16px var(--neon-red);
+        --glow-orange: 0 0 8px var(--neon-orange), 0 0 16px var(--neon-orange);
+    }
+    
+    div#openmenu {
+        width: 55% !important;              /* Reduziert von 65% */
+        min-width: 450px !important;        /* Reduziert von 500px */
+        max-height: 65vh !important;        /* Begrenzt */
+    }
+    
+    .q-ml-xl {
+        filter: drop-shadow(0 0 5px currentColor) !important;
+    }
+    
+    #Speedo {
+        filter: drop-shadow(0 0 10px var(--neon-cyan)) !important;
+    }
+    
+    speed, altitude {
+        text-shadow: 0 0 10px currentColor, 0 0 16px currentColor !important;
+    }
+    
+    .square, .circle {
+        box-shadow: 0 0 12px var(--neon-purple), 0 0 24px var(--neon-purple) !important;
+        border-width: 2px !important;       /* Reduziert */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --glow-cyan: 0 0 4px var(--neon-cyan), 0 0 8px var(--neon-cyan);
+        --glow-purple: 0 0 4px var(--neon-purple), 0 0 8px var(--neon-purple);
+        --glow-red: 0 0 4px var(--neon-red), 0 0 8px var(--neon-red);
+        --glow-orange: 0 0 4px var(--neon-orange), 0 0 8px var(--neon-orange);
+    }
+    
+    div#openmenu {
+        width: 70% !important;              /* Reduziert von 80% */
+        min-width: 350px !important;        /* Reduziert von 400px */
+        max-width: 500px !important;        /* Reduziert von 600px */
+        max-height: 60vh !important;        /* Stark begrenzt */
+    }
+    
+    .text-h6 {
+        font-size: 12px !important;         /* Reduziert von 14px */
+        text-shadow: 0 0 8px currentColor !important;
+    }
+    
+    .text-h7 {
+        font-size: 10px !important;         /* Reduziert von 12px */
+    }
+    
+    .q-btn {
+        font-size: 9px !important;          /* Reduziert von 10px */
+        padding: 3px 6px !important;        /* Stark kompakter */
+    }
+    
+    .q-checkbox__inner {
+        font-size: 12px !important;         /* Reduziert von 14px */
+    }
+    
+    .q-tab {
+        min-height: 35px !important;        /* Reduziert von 40px */
+        font-size: 10px !important;         /* Reduziert von 12px */
+    }
+    
+    .q-ml-xl {
+        margin-left: -15px !important;      /* Reduziert von -18px */
+        filter: drop-shadow(0 0 3px currentColor) !important;
+    }
+    
+    speed, altitude {
+        text-shadow: 0 0 6px currentColor, 0 0 10px currentColor !important;
+    }
+    
+    .square, .circle {
+        box-shadow: 0 0 8px var(--neon-purple), 0 0 16px var(--neon-purple) !important;
+        border-width: 1px !important;       /* Reduziert */
+    }
+    
+    .q-item {
+        padding: 4px 6px !important;        /* Stark kompakter */
+        margin: 1px 0 !important;           /* Reduziert */
+    }
+    
+    #money-container {
+        font-size: 24px !important;         /* Reduziert von 28px */
+        right: 1vw !important;              /* Reduziert */
+        top: 2vh !important;                /* Reduziert */
+    }
+    
+    .baseplate {
+        width: 100px !important;            /* Reduziert von 110px */
+        padding: 4px !important;            /* Reduziert */
+    }
+}
+
+/* 🔧 PERFORMANCE MODE - WEITERE REDUKTIONEN */
+.reduced-animations * {
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+}
+
+.reduced-animations .q-circular-progress {
+    filter: none !important;
+    transform: scale(0.8) !important;      /* Zusätzlich verkleinert */
+}
+
+.reduced-animations .square,
+.reduced-animations .circle {
+    animation: none !important;
+    box-shadow: 0 0 3px currentColor !important; /* Minimal glow */
+    border-width: 1px !important;          /* Dünne Borders */
+}
+
+.reduced-animations #Speedo,
+.reduced-animations speed,
+.reduced-animations altitude {
+    animation: none !important;
+    filter: none !important;
+    text-shadow: 0 0 2px currentColor !important; /* Minimal shadow */
+}
+
+.reduced-animations div#openmenu {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important; /* Reduziert shadow */
+}
+
+/* 🔧 HIGH PERFORMANCE MODE - ULTRA MINIMAL */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --anim-fast: 0s;
+        --anim-medium: 0s;
+        --anim-slow: 0s;
+    }
+    
+    * {
+        animation-duration: 0s !important;
+        transition-duration: 0s !important;
+    }
+    
+    .q-circular-progress,
+    #Speedo,
+    #FuelGaugeBackground,
+    #FuelGaugeValue,
+    #Icons {
+        filter: none !important;
+        transform: scale(0.8) !important;   /* Minimal size */
+    }
+    
+    speed,
+    altitude,
+    .square,
+    .circle {
+        text-shadow: none !important;
+        box-shadow: none !important;
+        animation: none !important;
+        border-width: 1px !important;       /* Minimal borders */
+    }
+    
+    div#openmenu {
+        max-width: 500px !important;        /* Begrenzt in Performance Mode */
+        max-height: 50vh !important;        /* Stark begrenzt */
+    }
+}
+
+/* 🔧 THEME-SPECIFIC RESPONSIVE ADJUSTMENTS - KOMPAKTER */
+.theme-cyberpunk .square,
+.theme-cyberpunk .circle {
+    border-color: var(--neon-purple) !important;
+    border-width: 2px !important;
+}
+
+.theme-synthwave .square,
+.theme-synthwave .circle {
+    border-color: #ff0080 !important;
+    border-width: 2px !important;
+    box-shadow: 0 0 16px #ff0080, 0 0 32px #ff0080 !important; /* Reduziert */
+}
+
+.theme-matrix .square,
+.theme-matrix .circle {
+    border-color: #00ff00 !important;
+    border-width: 2px !important;
+    box-shadow: 0 0 16px #00ff00, 0 0 32px #00ff00 !important; /* Reduziert */
+}
+
+/* 🔧 ENHANCED GPS HUD RESPONSIVE - KOMPAKTER */
+#gps-hud-container {
+    position: fixed !important;
+    z-index: 800 !important;              /* Reduziert z-index */
+    width: 300px !important;              /* Reduziert von 360px */
+    height: 280px !important;             /* Reduziert von 320px */
+}
+
+@media (max-width: 768px) {
+    #gps-hud-container {
+        top: 8px !important;               /* Reduziert von 10px */
+        right: 8px !important;             /* Reduziert von 10px */
+        width: 250px !important;           /* Reduziert von 280px */
+        height: 220px !important;          /* Reduziert von 240px */
+    }
+}
+
+@media (max-width: 480px) {
+    #gps-hud-container {
+        width: 220px !important;           /* Reduziert von 250px */
+        height: 180px !important;          /* Reduziert von 200px */
+    }
+}
+
+/* 🔧 COMPASS ENHANCEMENTS - KOMPAKTER */
+.baseplate {
+    filter: drop-shadow(0 0 8px var(--neon-cyan)) !important; /* Reduziert */
+    width: 120px !important;              /* Reduziert von 130px */
+    padding: 5px !important;              /* Reduziert */
+}
+
+@media (max-width: 768px) {
+    .baseplate {
+        width: 100px !important;           /* Reduziert von 120px */
+        filter: drop-shadow(0 0 5px var(--neon-cyan)) !important;
+    }
+    
+    .street-container {
+        font-size: 1.0vh !important;       /* Reduziert von 1.2vh */
+    }
+    
+    .pointer {
+        font-size: 1.6vh !important;       /* Reduziert von 1.8vh */
+    }
+    
+    .degrees {
+        font-size: 1.0vh !important;       /* Reduziert von 1.2vh */
+    }
+}
+
+/* 🔧 CRITICAL STATE RESPONSIVE ANIMATIONS - REDUZIERT */
+@media (max-width: 1280px) {
+    .critical-state {
+        animation: criticalAlert 1.5s ease-in-out infinite !important; /* Verlangsamt */
+    }
+}
+
+@media (max-width: 768px) {
+    .critical-state {
+        animation: none !important;
+        box-shadow: 0 0 8px var(--neon-red) !important; /* Reduziert */
+    }
+}
+
+/* 🔧 VERHINDERT ÜBERLAPPUNG UND VOLLBILDVERBLENDUNG - FINAL */
+#openmenu * {
+    max-width: 98% !important;            /* Verhindert Overflow */
+    max-height: 98% !important;           /* Verhindert Overflow */
+}
+
+.q-dialog__inner {
+    max-width: 90vw !important;           /* Begrenzt Dialog-Breite */
+    max-height: 80vh !important;          /* Begrenzt Dialog-Höhe */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}

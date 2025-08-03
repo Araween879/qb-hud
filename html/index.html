@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HUD System</title>
+    
+    <!-- Core CSS Architecture -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/z-index-system.css">
+    <link rel="stylesheet" href="css/performance-mode.css">
+    
+    <!-- Legacy fallback styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+    <!-- Vue.js 3 Production -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/fonts/Orbitron-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body class="hud-body">
+    <!-- Main HUD Container -->
+    <div id="hud-app" class="hud-container" :class="themeClass" v-cloak>
+        
+        <!-- Status Bars Component -->
+        <status-bars
+            v-if="components.statusBars.visible"
+            :position="components.statusBars.position"
+            :stats="playerStats"
+            :config="components.statusBars"
+            :theme="currentTheme"
+            @critical-alert="handleCriticalAlert"
+        ></status-bars>
+        
+        <!-- Vehicle Speedometer -->
+        <speedometer
+            v-if="components.speedometer.visible && vehicleData.inVehicle"
+            :position="components.speedometer.position"
+            :vehicle-data="vehicleData"
+            :config="components.speedometer"
+            :theme="currentTheme"
+        ></speedometer>
+        
+        <!-- Minimap Container -->
+        <minimap-container
+            v-if="components.minimap.visible"
+            :position="components.minimap.position"
+            :config="components.minimap"
+            :theme="currentTheme"
+        ></minimap-container>
+        
+        <!-- Notifications System -->
+        <notification-system
+            v-if="components.notifications.visible"
+            :notifications="notifications"
+            :config="components.notifications"
+            :theme="currentTheme"
+            @dismiss="dismissNotification"
+        ></notification-system>
+        
+        <!-- Compass -->
+        <compass-component
+            v-if="components.compass.visible"
+            :position="components.compass.position"
+            :heading="mapData.heading"
+            :street="mapData.street"
+            :config="components.compass"
+            :theme="currentTheme"
+        ></compass-component>
+        
+        <!-- Debug Info (Development only) -->
+        <debug-info
+            v-if="debugMode && showDebugInfo"
+            :performance="performanceStats"
+            :version="hudVersion"
+            :position="{ x: 10, y: 10 }"
+        ></debug-info>
+        
+        <!-- Performance Warning -->
+        <performance-warning
+            v-if="performanceWarning.show"
+            :warning="performanceWarning"
+            @accept="acceptPerformanceMode"
+            @dismiss="dismissPerformanceWarning"
+        ></performance-warning>
+        
+        <!-- Settings Menu -->
+        <settings-menu
+            v-if="settingsMenu.visible"
+            :settings="settings"
+            :available-themes="availableThemes"
+            @save="saveSettings"
+            @close="closeSettings"
+            @theme-change="changeTheme"
+        ></settings-menu>
+        
+        <!-- Critical Alert Overlay -->
+        <critical-alert
+            v-if="criticalAlert.show"
+            :alert="criticalAlert"
+            :theme="currentTheme"
+        ></critical-alert>
+        
+        <!-- Loading Screen -->
+        <loading-screen
+            v-if="isLoading"
+            :progress="loadingProgress"
+            :message="loadingMessage"
+            :theme="currentTheme"
+        ></loading-screen>
+        
+    </div>
+
+    <!-- Vue.js Component Templates -->
+    
+    <!-- Status Bars Component -->
+    <script type="text/x-template" id="status-bars-template">
+        <div class="status-bars-container" :style="positionStyle">
+            
+            <!-- Health Bar -->
+            <div v-if="config.health.enabled" class="status-bar-wrapper health-bar">
+                <div class="status-bar-icon">
+                    <i class="fas fa-heart" :style="{ color: config.health.color }"></i>
+                </div>
+                <div class="status-bar">
+                    <div 
+                        class="status-bar-fill health-fill"
+                        :class="{
+                            'critical': stats.health <= config.health.criticalThreshold,
+                            'warning': stats.health <= config.health.warningThreshold
+                        }"
+                        :style="{ 
+                            width: stats.health + '%', 
+                            backgroundColor: config.health.color,
+                            animation: getCriticalAnimation('health')
+                        }"
+                    ></div>
+                </div>
+                <div class="status-bar-text">{{ Math.ceil(stats.health) }}</div>
+            </div>
+            
+            <!-- Armor Bar -->
+            <div v-if="config.armor.enabled && (stats.armor > 0 || !config.armor.showWhenZero)" class="status-bar-wrapper armor-bar">
+                <div class="status-bar-icon">
+                    <i class="fas fa-shield-alt" :style="{ color: config.armor.color }"></i>
+                </div>
+                <div class="status-bar">
+                    <div 
+                        class="status-bar-fill armor-fill"
+                        :class="{
+                            'warning': stats.armor <= config.armor.warningThreshold
+                        }"
+                        :style="{ 
+                            width: stats.armor + '%', 
+                            backgroundColor: config.armor.color 
+                        }"
+                    ></div>
+                </div>
+                <div class="status-bar-text">{{ Math.ceil(stats.armor) }}</div>
+            </div>
+            
+            <!-- Hunger Bar -->
+            <div v-if="config.hunger.enabled" class="status-bar-wrapper hunger-bar">
+                <div class="status-bar-icon">
+                    <i class="fas fa-hamburger" :style="{ color: config.hunger.color }"></i>
+                </div>
+                <div class="status-bar">
+                    <div 
+                        class="status-bar-fill hunger-fill"
+                        :class="{
+                            'critical': stats.hunger <= config.hunger.criticalThreshold,
+                            'warning': stats.hunger <= config.hunger.warningThreshold
+                        }"
+                        :style="{ 
+                            width: stats.hunger + '%', 
+                            backgroundColor: config.hunger.color 
+                        }"
+                    ></div>
+                </div>
+                <div class="status-bar-text">{{ Math.ceil(stats.hunger) }}</div>
+            </div>
+            
+            <!-- Thirst Bar -->
+            <div v-if="config.thirst.enabled" class="status-bar-wrapper thirst-bar">
+                <div class="status-bar-icon">
+                    <i class="fas fa-tint" :style="{ color: config.thirst.color }"></i>
+                </div>
+                <div class="status-bar">
+                    <div 
+                        class="status-bar-fill thirst-fill"
+                        :class="{
+                            'critical': stats.thirst <= config.thirst.criticalThreshold,
+                            'warning': stats.thirst <= config.thirst.warningThreshold
+                        }"
+                        :style="{ 
+                            width: stats.thirst + '%', 
+                            backgroundColor: config.thirst.color 
+                        }"
+                    ></div>
+                </div>
+                <div class="status-bar-text">{{ Math.ceil(stats.thirst) }}</div>
+            </div>
+            
+            <!-- Stress Bar -->
+            <div v-if="config.stress.enabled && stats.stress > 0" class="status-bar-wrapper stress-bar">
+                <div class="status-bar-icon">
+                    <i class="fas fa-brain" :style="{ color: config.stress.color }"></i>
+                </div>
+                <div class="status-bar">
+                    <div 
+                        class="status-bar-fill stress-fill"
+                        :class="{
+                            'critical': stats.stress >= config.stress.criticalThreshold
+                        }"
+                        :style="{ 
+                            width: stats.stress + '%', 
+                            backgroundColor: config.stress.color 
+                        }"
+                    ></div>
+                </div>
+                <div class="status-bar-text">{{ Math.ceil(stats.stress) }}</div>
+            </div>
+            
+            <!-- Stamina Bar -->
+            <div v-if="config.stamina.enabled && (!config.stamina.showWhenFull || stats.stamina < 100)" class="status-bar-wrapper stamina-bar">
+                <div class="status-bar-icon">
+                    <i class="fas fa-running" :style="{ color: config.stamina.color }"></i>
+                </div>
+                <div class="status-bar">
+                    <div 
+                        class="status-bar-fill stamina-fill"
+                        :style="{ 
+                            width: stats.stamina + '%', 
+                            backgroundColor: config.stamina.color 
+                        }"
+                    ></div>
+                </div>
+                <div class="status-bar-text">{{ Math.ceil(stats.stamina) }}</div>
+            </div>
+            
+            <!-- Oxygen Bar (only when underwater) -->
+            <div v-if="config.oxygen.enabled && stats.oxygen < 100" class="status-bar-wrapper oxygen-bar">
+                <div class="status-bar-icon">
+                    <i class="fas fa-lungs" :style="{ color: config.oxygen.color }"></i>
+                </div>
+                <div class="status-bar">
+                    <div 
+                        class="status-bar-fill oxygen-fill"
+                        :class="{
+                            'critical': stats.oxygen <= config.oxygen.criticalThreshold
+                        }"
+                        :style="{ 
+                            width: stats.oxygen + '%', 
+                            backgroundColor: config.oxygen.color 
+                        }"
+                    ></div>
+                </div>
+                <div class="status-bar-text">{{ Math.ceil(stats.oxygen) }}</div>
+            </div>
+            
+        </div>
+    </script>
+    
+    <!-- Speedometer Component -->
+    <script type="text/x-template" id="speedometer-template">
+        <div class="speedometer-container" :style="positionStyle">
+            <div class="speedometer-display" :class="theme">
+                
+                <!-- Speed Display -->
+                <div class="speed-main">
+                    <div class="speed-value">{{ vehicleData.speed }}</div>
+                    <div class="speed-unit">{{ config.unit.toUpperCase() }}</div>
+                </div>
+                
+                <!-- Additional Info -->
+                <div class="vehicle-info">
+                    
+                    <!-- Gear -->
+                    <div v-if="config.showGear" class="gear-display">
+                        <i class="fas fa-cog"></i>
+                        <span>{{ vehicleData.gear === 0 ? 'R' : vehicleData.gear }}</span>
+                    </div>
+                    
+                    <!-- RPM -->
+                    <div v-if="config.showRPM" class="rpm-display">
+                        <div class="rpm-bar">
+                            <div 
+                                class="rpm-fill"
+                                :style="{ width: vehicleData.rpm + '%' }"
+                                :class="{ 'redline': vehicleData.rpm > 80 }"
+                            ></div>
+                        </div>
+                        <span class="rpm-text">{{ Math.ceil(vehicleData.rpm) }}%</span>
+                    </div>
+                    
+                    <!-- Fuel -->
+                    <div v-if="config.showFuel" class="fuel-display">
+                        <i class="fas fa-gas-pump" :class="{ 'low-fuel': vehicleData.fuel <= 20 }"></i>
+                        <span>{{ Math.ceil(vehicleData.fuel) }}%</span>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </script>
+    
+    <!-- Core JavaScript Modules -->
+    <script src="js/state-manager.js"></script>
+    <script src="js/event-manager.js"></script>
+    <script src="js/theme-manager.js"></script>
+    <script src="js/hud-controller.js"></script>
+    <script src="js/component-manager.js"></script>
+    
+    <!-- Main Vue.js Application -->
+    <script src="app.js"></script>
+    
+</body>
+</html>

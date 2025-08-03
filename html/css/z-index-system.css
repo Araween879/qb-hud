@@ -1,0 +1,709 @@
+/* ================================
+   🎨 ENHANCED HUD - Z-INDEX SYSTEM
+   ================================
+   
+   UI Layer Management & Stacking
+   Version: 3.1.0
+   
+   Comprehensive z-index hierarchy
+   preventing UI conflicts and overlaps
+   ================================ */
+
+/* ================================
+   📋 Z-INDEX HIERARCHY MAP
+   ================================
+   
+   🏗️ LAYER STRUCTURE:
+   ├── -1     Background Effects
+   ├── 0      Base Content
+   ├── 100    HUD Elements
+   ├── 200    Menu System
+   ├── 300    Overlays
+   ├── 400    Modals/Dialogs
+   ├── 500    Tooltips
+   ├── 600    GPS HUD
+   ├── 700    Vehicle HUD
+   ├── 800    Compass
+   ├── 900    Critical Alerts
+   └── 999    Debug Panel
+   ================================ */
+
+:root {
+    /* Base Layer Definitions */
+    --z-background: -1;
+    --z-base: 0;
+    --z-content: 10;
+    
+    /* HUD System Layers */
+    --z-hud-base: 100;
+    --z-hud-items: 110;
+    --z-hud-critical: 120;
+    
+    /* Menu System Layers */
+    --z-menu-base: 200;
+    --z-menu-panels: 210;
+    --z-menu-content: 220;
+    --z-menu-tabs: 230;
+    
+    /* Overlay System Layers */
+    --z-overlay-base: 300;
+    --z-overlay-backdrop: 310;
+    --z-overlay-content: 320;
+    
+    /* Modal System Layers */
+    --z-modal-base: 400;
+    --z-modal-backdrop: 410;
+    --z-modal-content: 420;
+    --z-modal-header: 430;
+    
+    /* Utility Layers */
+    --z-tooltip-base: 500;
+    --z-tooltip-content: 510;
+    
+    /* Specific Component Layers */
+    --z-gps-hud: 600;
+    --z-vehicle-hud: 700;
+    --z-compass: 800;
+    --z-critical-alerts: 900;
+    --z-debug-panel: 999;
+}
+
+/* ================================
+   🎮 HUD SYSTEM Z-INDEX
+   ================================ */
+
+/* Main HUD Container */
+.hud-container {
+    z-index: var(--z-hud-base) !important;
+    position: relative;
+}
+
+/* Player HUD Elements */
+#playerhud {
+    z-index: var(--z-hud-items) !important;
+    position: relative;
+}
+
+#playerhud .hud-item {
+    z-index: var(--z-hud-items) !important;
+    position: relative;
+}
+
+/* Critical State Items (Higher Priority) */
+.hud-item.critical {
+    z-index: var(--z-hud-critical) !important;
+    position: relative;
+}
+
+.critical-state {
+    z-index: var(--z-critical-alerts) !important;
+    position: relative;
+}
+
+/* HUD Item Components */
+.stat-icon {
+    z-index: calc(var(--z-hud-items) + 1) !important;
+    position: relative;
+}
+
+.stat-bar {
+    z-index: var(--z-hud-items) !important;
+    position: relative;
+}
+
+.stat-progress::after {
+    z-index: calc(var(--z-hud-items) + 1) !important;
+    position: absolute;
+}
+
+/* ================================
+   🚗 VEHICLE HUD Z-INDEX
+   ================================ */
+
+.vehicle-hud {
+    z-index: var(--z-vehicle-hud) !important;
+    position: relative;
+}
+
+/* Vehicle Elements */
+.square,
+.circle {
+    z-index: var(--z-vehicle-hud) !important;
+    position: relative;
+}
+
+.border {
+    z-index: calc(var(--z-vehicle-hud) + 1) !important;
+    position: relative;
+}
+
+speed,
+altitude {
+    z-index: calc(var(--z-vehicle-hud) + 2) !important;
+    position: relative;
+}
+
+/* ================================
+   🧭 COMPASS SYSTEM Z-INDEX
+   ================================ */
+
+.compass-container {
+    z-index: var(--z-compass) !important;
+    position: relative;
+}
+
+.baseplate {
+    z-index: var(--z-compass) !important;
+    position: relative;
+}
+
+.street-container {
+    z-index: calc(var(--z-compass) + 1) !important;
+    position: relative;
+}
+
+.street1,
+.street2 {
+    z-index: calc(var(--z-compass) + 2) !important;
+    position: relative;
+}
+
+.pointer {
+    z-index: calc(var(--z-compass) + 3) !important;
+    position: relative;
+}
+
+.degrees {
+    z-index: calc(var(--z-compass) + 2) !important;
+    position: relative;
+}
+
+.bezel {
+    z-index: calc(var(--z-compass) + 1) !important;
+    position: relative;
+}
+
+.bearing {
+    z-index: calc(var(--z-compass) + 1) !important;
+    position: relative;
+}
+
+/* ================================
+   📍 GPS HUD Z-INDEX
+   ================================ */
+
+#gps-hud-container {
+    z-index: var(--z-gps-hud) !important;
+    position: fixed;
+}
+
+.gps-panel {
+    z-index: calc(var(--z-gps-hud) + 1) !important;
+    position: relative;
+}
+
+.gps-location-info {
+    z-index: calc(var(--z-gps-hud) + 2) !important;
+    position: relative;
+}
+
+.gps-status-icons {
+    z-index: calc(var(--z-gps-hud) + 3) !important;
+    position: relative;
+}
+
+/* ================================
+   📱 MENU SYSTEM Z-INDEX
+   ================================ */
+
+/* Main Menu Container */
+#openmenu {
+    z-index: var(--z-menu-base) !important;
+    position: fixed;
+}
+
+/* Menu Scan Line Effect */
+#openmenu::before {
+    z-index: calc(var(--z-menu-base) + 5) !important;
+    position: absolute;
+}
+
+/* Quasar Components in Menu */
+.q-splitter {
+    z-index: var(--z-menu-panels) !important;
+    position: relative;
+}
+
+.q-splitter__panel {
+    z-index: var(--z-menu-panels) !important;
+    position: relative;
+}
+
+.q-tabs {
+    z-index: var(--z-menu-tabs) !important;
+    position: relative;
+}
+
+.q-tab-panels {
+    z-index: var(--z-menu-content) !important;
+    position: relative;
+}
+
+.q-tab-panel {
+    z-index: var(--z-menu-content) !important;
+    position: relative;
+}
+
+/* Menu Content Elements */
+.menu-content {
+    z-index: var(--z-menu-content) !important;
+    position: relative;
+}
+
+.settings-section {
+    z-index: var(--z-menu-content) !important;
+    position: relative;
+}
+
+/* ================================
+   🎛️ FORM ELEMENTS Z-INDEX
+   ================================ */
+
+/* Buttons */
+.btn,
+.q-btn {
+    z-index: calc(var(--z-menu-content) + 1) !important;
+    position: relative;
+}
+
+.btn:hover,
+.q-btn:hover {
+    z-index: calc(var(--z-menu-content) + 2) !important;
+}
+
+/* Checkboxes & Toggles */
+.q-checkbox,
+.q-toggle {
+    z-index: calc(var(--z-menu-content) + 1) !important;
+    position: relative;
+}
+
+/* Sliders */
+.q-slider {
+    z-index: calc(var(--z-menu-content) + 1) !important;
+    position: relative;
+}
+
+.q-slider__thumb {
+    z-index: calc(var(--z-menu-content) + 2) !important;
+    position: relative;
+}
+
+/* Input Fields */
+.q-field {
+    z-index: calc(var(--z-menu-content) + 1) !important;
+    position: relative;
+}
+
+.q-field--focused {
+    z-index: calc(var(--z-menu-content) + 2) !important;
+}
+
+/* ================================
+   📋 LIST & CARD Z-INDEX
+   ================================ */
+
+.q-list {
+    z-index: var(--z-menu-content) !important;
+    position: relative;
+}
+
+.q-item {
+    z-index: var(--z-menu-content) !important;
+    position: relative;
+}
+
+.q-item:hover {
+    z-index: calc(var(--z-menu-content) + 1) !important;
+}
+
+.q-card {
+    z-index: calc(var(--z-menu-content) + 1) !important;
+    position: relative;
+}
+
+.q-card:hover {
+    z-index: calc(var(--z-menu-content) + 2) !important;
+}
+
+/* ================================
+   🎭 MODAL & DIALOG Z-INDEX
+   ================================ */
+
+.q-dialog {
+    z-index: var(--z-modal-base) !important;
+}
+
+.q-dialog__backdrop {
+    z-index: var(--z-modal-backdrop) !important;
+    position: fixed;
+}
+
+.q-dialog__inner {
+    z-index: var(--z-modal-content) !important;
+    position: relative;
+}
+
+.q-card.q-dialog-plugin {
+    z-index: var(--z-modal-content) !important;
+    position: relative;
+}
+
+/* Custom Modal Components */
+.modal-container {
+    z-index: var(--z-modal-base) !important;
+    position: fixed;
+}
+
+.modal-backdrop {
+    z-index: var(--z-modal-backdrop) !important;
+    position: fixed;
+}
+
+.modal-content {
+    z-index: var(--z-modal-content) !important;
+    position: relative;
+}
+
+.modal-header {
+    z-index: var(--z-modal-header) !important;
+    position: relative;
+}
+
+/* ================================
+   💡 TOOLTIP SYSTEM Z-INDEX
+   ================================ */
+
+.q-tooltip {
+    z-index: var(--z-tooltip-content) !important;
+}
+
+.tooltip-container {
+    z-index: var(--z-tooltip-base) !important;
+    position: relative;
+}
+
+.tooltip-content {
+    z-index: var(--z-tooltip-content) !important;
+    position: absolute;
+}
+
+/* Custom Tooltips */
+.neon-tooltip {
+    z-index: var(--z-tooltip-content) !important;
+    position: absolute;
+}
+
+/* ================================
+   🎨 THEME PREVIEW Z-INDEX
+   ================================ */
+
+.theme-preview-card {
+    z-index: calc(var(--z-menu-content) + 1) !important;
+    position: relative;
+}
+
+.theme-preview-card:hover {
+    z-index: calc(var(--z-menu-content) + 2) !important;
+}
+
+.theme-preview-overlay {
+    z-index: calc(var(--z-menu-content) + 2) !important;
+    position: absolute;
+}
+
+/* ================================
+   🐛 DEBUG SYSTEM Z-INDEX
+   ================================ */
+
+.debug-overlay {
+    z-index: var(--z-debug-panel) !important;
+    position: fixed;
+}
+
+.debug-header {
+    z-index: calc(var(--z-debug-panel) + 1) !important;
+    position: relative;
+}
+
+.debug-content {
+    z-index: var(--z-debug-panel) !important;
+    position: relative;
+}
+
+/* Debug Controls */
+.debug-controls {
+    z-index: calc(var(--z-debug-panel) + 2) !important;
+    position: relative;
+}
+
+/* ================================
+   ⚡ OVERLAY SYSTEM Z-INDEX
+   ================================ */
+
+.overlay-container {
+    z-index: var(--z-overlay-base) !important;
+    position: fixed;
+}
+
+.overlay-backdrop {
+    z-index: var(--z-overlay-backdrop) !important;
+    position: fixed;
+}
+
+.overlay-content {
+    z-index: var(--z-overlay-content) !important;
+    position: relative;
+}
+
+/* Loading Overlays */
+.loading-overlay {
+    z-index: calc(var(--z-overlay-base) + 10) !important;
+    position: fixed;
+}
+
+.loading-content {
+    z-index: calc(var(--z-overlay-content) + 1) !important;
+    position: relative;
+}
+
+/* ================================
+   🎪 ANIMATION EFFECTS Z-INDEX
+   ================================ */
+
+/* Particle Effects */
+.particle-effect {
+    z-index: calc(var(--z-background) + 1) !important;
+    position: absolute;
+}
+
+.particle-effect::before,
+.particle-effect::after {
+    z-index: calc(var(--z-background) + 1) !important;
+    position: absolute;
+}
+
+/* Glow Effects */
+.glow-effect {
+    z-index: calc(var(--z-hud-items) - 1) !important;
+    position: absolute;
+}
+
+/* Scan Line Effects */
+.scan-line {
+    z-index: calc(var(--z-menu-base) + 10) !important;
+    position: absolute;
+}
+
+/* Background Grid/Matrix Effects */
+.theme-cyberpunk::before,
+.theme-synthwave::before,
+.theme-matrix::after {
+    z-index: var(--z-background) !important;
+    position: fixed;
+}
+
+/* ================================
+   🔊 SOUND VISUALIZATION Z-INDEX
+   ================================ */
+
+.sound-visualizer {
+    z-index: calc(var(--z-hud-items) + 1) !important;
+    position: absolute;
+}
+
+.audio-waveform {
+    z-index: calc(var(--z-hud-items) + 2) !important;
+    position: relative;
+}
+
+/* ================================
+   🛠️ UTILITY CLASSES
+   ================================ */
+
+/* Force Layer Utilities */
+.z-force-top {
+    z-index: 9999 !important;
+    position: relative;
+}
+
+.z-force-bottom {
+    z-index: -999 !important;
+    position: relative;
+}
+
+.z-above-hud {
+    z-index: calc(var(--z-hud-base) + 50) !important;
+    position: relative;
+}
+
+.z-below-hud {
+    z-index: calc(var(--z-hud-base) - 10) !important;
+    position: relative;
+}
+
+.z-above-menu {
+    z-index: calc(var(--z-menu-base) + 50) !important;
+    position: relative;
+}
+
+.z-below-menu {
+    z-index: calc(var(--z-menu-base) - 10) !important;
+    position: relative;
+}
+
+/* Layer Reset Utilities */
+.z-reset {
+    z-index: var(--z-base) !important;
+}
+
+.z-auto {
+    z-index: auto !important;
+}
+
+/* ================================
+   📱 RESPONSIVE Z-INDEX ADJUSTMENTS
+   ================================ */
+
+@media (max-width: 768px) {
+    /* Adjust menu z-index for mobile */
+    #openmenu {
+        z-index: calc(var(--z-menu-base) + 100) !important;
+    }
+    
+    /* Ensure debug panel is accessible on mobile */
+    .debug-overlay {
+        z-index: calc(var(--z-debug-panel) + 100) !important;
+    }
+    
+    /* GPS HUD priority on mobile */
+    #gps-hud-container {
+        z-index: calc(var(--z-gps-hud) + 50) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Compact mode z-index adjustments */
+    .hud-item {
+        z-index: calc(var(--z-hud-items) + 10) !important;
+    }
+    
+    .compass-container {
+        z-index: calc(var(--z-compass) + 10) !important;
+    }
+}
+
+/* ================================
+   🎯 CONFLICT RESOLUTION
+   ================================ */
+
+/* Ensure no conflicts with external resources */
+.external-ui {
+    z-index: 50 !important;
+}
+
+.qb-core-ui {
+    z-index: 60 !important;
+}
+
+.notification-system {
+    z-index: 350 !important;
+}
+
+/* Emergency override for broken z-index */
+.z-emergency-fix {
+    z-index: 99999 !important;
+    position: fixed !important;
+}
+
+/* ================================
+   🔧 DEVELOPER UTILITIES
+   ================================ */
+
+/* Debug z-index visualization */
+.debug-z-index * {
+    outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+    position: relative !important;
+}
+
+.debug-z-index *::before {
+    content: attr(class) ' (z:' attr(style) ')' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    font-size: 10px !important;
+    background: rgba(255, 0, 0, 0.8) !important;
+    color: white !important;
+    padding: 2px !important;
+    z-index: 99999 !important;
+}
+
+/* ================================
+   📊 Z-INDEX LAYER DOCUMENTATION
+   ================================ */
+
+/*
+Z-INDEX LAYER MAP:
+
+Background Effects     (-1)
+├── Particle Effects
+├── Theme Grid/Matrix
+└── Glow Background
+
+Base Content          (0-99)
+├── Default Elements
+├── External UIs
+└── Static Content
+
+HUD System           (100-199)
+├── Main Container   (100)
+├── HUD Items        (110)
+├── Critical States  (120)
+└── Status Effects   (130)
+
+Menu System          (200-299)
+├── Menu Base        (200)
+├── Menu Panels      (210)
+├── Menu Content     (220)
+├── Menu Tabs        (230)
+└── Menu Effects     (240)
+
+Overlays             (300-399)
+├── Overlay Base     (300)
+├── Overlay Backdrop (310)
+├── Overlay Content  (320)
+└── Loading Overlays (330)
+
+Modals & Dialogs     (400-499)
+├── Modal Base       (400)
+├── Modal Backdrop   (410)
+├── Modal Content    (420)
+├── Modal Header     (430)
+└── Modal Controls   (440)
+
+Tooltips             (500-599)
+├── Tooltip Base     (500)
+├── Tooltip Content  (510)
+└── Tooltip Effects  (520)
+
+Special Components   (600-899)
+├── GPS HUD          (600)
+├── Vehicle HUD      (700)
+├── Compass          (800)
+└── Critical Alerts  (900)
+
+Debug & Admin        (900-999)
+├── Debug Panel      (999)
+├── Admin Tools      (990)
+└── Dev Utilities    (980)
+*/
